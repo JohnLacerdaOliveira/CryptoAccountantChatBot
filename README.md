@@ -21,8 +21,6 @@ This project is a **document-based question-answering system** built using LangC
 
 ## Installation
 
-## Installation
-
 1. **Clone the Repository**  
    Run the following commands to clone the repository and navigate into the project directory:
 
@@ -46,35 +44,36 @@ pip install -r requirements.txt
 
    ```
 
-##File Structure
+## File Structure
+
+```bash
 ├── Documents/ # Folder to store PDF documents
 ├── main.py # Main application script
 ├── .env # Environment variables
 ├── requirements.txt # List of dependencies
 └── README.md # Project documentation
+```
 
 ## Key Functions
 
-### `document_loader(path: str)`
+- [**document_loader(path: str)**](RAG/ChatBot.py#L21)  
+  Loads PDF files and extracts their content for processing.
 
-Loads PDF files and extracts their content.
+- [**doc_splitter(docs)**](RAG/ChatBot.py#L27)  
+  Splits documents into smaller, overlapping chunks for efficient embedding and retrieval.
 
-### `doc_splitter(docs)`
+- [**embed_docs(splitted_docs)**](RAG/ChatBot.py#L32)  
+  Embeds text chunks using OpenAI embeddings and stores them in a FAISS vector database.
 
-Splits documents into chunks for better embedding performance.
+- [**similarity_search(user_prompt: str)**](RAG/ChatBot.py#L54)  
+  Performs a similarity search in the vector database to find the most relevant document chunks.
 
-### `embed_docs(splitted_docs)`
+- [**create_system_prompt(context: str, user_prompt: str)**](RAG/ChatBot.py#L57)  
+  Generates a language model prompt using retrieved document context and the user's query.
 
-Embeds the text chunks using OpenAI embeddings and stores them in a FAISS vector database.
+- [**predict(user_question, history)**](RAG/ChatBot.py#L106)  
+  Handles user queries by retrieving relevant context and generating responses through the language model.
 
-### `similarity_search(user_prompt: str)`
+## License
 
-Searches the vector database for the most relevant document chunks.
-
-### `create_system_prompt(context: str, user_prompt: str)`
-
-Generates a prompt for the language model using retrieved document context.
-
-### `predict(user_question, history)`
-
-Handles user queries by retrieving context and generating responses.
+This project is licensed under the MIT License. See the LICENSE file for more details.
