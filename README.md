@@ -31,9 +31,9 @@ This project is a **document-based question-answering system** built using LangC
 
 2. **Install Dependencies**
 
-```bash
-pip install -r requirements.txt
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 3. **Set Environment Variables Create a .env file in the root directory and add your OpenAI API key:**
 
@@ -41,18 +41,17 @@ pip install -r requirements.txt
    OPENAI_API_KEY=your_openai_api_key
    EMBEDDING_MODEL=text-embedding-model-name
    LLM_MODEL=llm-model-name
-
    ```
 
 ## File Structure
 
-```bash
-├── Documents/ # Folder to store PDF documents
-├── main.py # Main application script
-├── .env # Environment variables
-├── requirements.txt # List of dependencies
-└── README.md # Project documentation
-```
+   ```bash
+   ├── Documents/ # Folder to store PDF documents
+   ├── main.py # Main application script
+   ├── .env # Environment variables
+   ├── requirements.txt # List of dependencies
+   └── README.md # Project documentation
+   ```
 
 ## Key Functions
 
